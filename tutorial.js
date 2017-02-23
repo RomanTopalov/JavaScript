@@ -1,3 +1,4 @@
+/*
 var quant=1, price=2 , discount=0.93,cost=0;
 
 cost=quant>=0 ? quant*price*1.01 : quant*price*discount;
@@ -47,3 +48,4 @@ while (i<5){
     i++;
 }
 
+*/
