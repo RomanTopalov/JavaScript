@@ -40,3 +40,27 @@ console.log(document.title + "<---> " + document.wish.title)
 console.log("<------------------->");
 
 
+function Box(h,w,d,m) {
+    this.height=h;
+    this.wight=w;
+    this.dept=d;
+    this.material=m;
+}
+Box.prototype.getEquals=function (differObj) {
+   if(this.height==differObj.height&&this.wight==differObj.wight){
+       return true;
+    }else{
+       return false
+   }
+}
+Box.prototype.getSquare = function () {
+    return this.height*this.dept*this.height;
+}
+
+var box1 = new Box(3,1,2,1);
+var box2 = new Box(3,3,3,3);
+console.log("box1 = "+ box1.getSquare() + " and box2 ="+box2.getSquare());
+var equal = box1.getEquals(box2);
+console.log("result of equals = " + equal);
+
+
