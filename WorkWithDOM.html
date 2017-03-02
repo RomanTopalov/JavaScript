@@ -12,18 +12,29 @@
 анонимной функции.-->
 <body>
 <script>
-    var Module={};
-    Module.name="MODULE";
+    window.onload = function () {
+        var Module = {};
+        Module.name = "MODULE";
 
-    Module.startModule=function () {
-        document.write(Module.name);
+        Module.startModule = function () {
+            var parag = document.getElementsByTagName("li");
+            for (var i = 0; 0<parag.length ; i++) {
+                parag[i].innerHTML="PARAGRA";
+            }
+        }
+        Module.startModule();
     }
 
 
-    Module.startModule();
 </script>
 
-ROMA
+<div> GO it
+    <ul>
+        <li>SOME</li>
+        <li>SOME</li>
+        <li>DOME</li>
+    </ul>
+</div>
 
 
 </body>
