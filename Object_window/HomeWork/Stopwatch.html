@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StopWatch</title>
+</head>
+<body>
+<script>
+
+    window.onload = function () {
+        var hour=0;
+        var min=0;
+        var sec=0;
+        var mil=0;
+
+        var intervalHandler;
+
+      function count() {
+          get("output").innerHTML=hour.toString()+':' + min.toString() +':'+ sec.toString()+':'+mil.toString();
+            mil++;
+            if(mil>100){
+                mil=0;
+                sec++;
+                if (sec>60){
+                    sec=0;
+                    min++;
+                    if (min>60){
+                        min=0;
+                        hour++;
+                        if(hour>24){
+                            mil=0;
+                        sec=0;
+                        hour=0;
+                        min=0;}
+                    }
+                }
+            }
+      }
+
+      get("start").onclick=function () {
+          intervalHandler=setInterval(count,10);
+      }
+      get("stop").onclick=function () {
+          clearInterval(intervalHandler);
+      }
+
+      get("reset").onclick=function () {
+          var hour=0;
+          var min=0;
+          var sec=0;
+          var mil=0;
+          get("output").innerHTML=hour.toString()+':' + min.toString() +':'+ sec.toString()+':'+mil.toString();
+
+      }
+
+
+
+    }
+
+    var get=function (id) {
+        return document.getElementById(id);
+    }
+
+
+</script>
+    <h1 id="output">-</h1>
+    <input type="button" id="start" value="Start">
+    <input type="button" id="stop" value="Stop">
+    <input type="button" id="reset" value="Reset">
+
+
+</body>
+</html>
