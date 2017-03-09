@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FastStr</title>
+</head>
+<body>
+
+<script>
+
+
+    var str="some str";
+    var count=0;
+    var intervalHandler;
+
+        function count() {
+            get("str").innerHTML =str[count];
+            count++;
+        }
+    get("startButton").onclick = function () {
+        intervalHandler = setInterval(count, 5);
+    }
+
+    var get = function (id){
+        return document.getElementById(id);
+    }
+
+</script>
+
+<h1 id="str">-</h1>
+<input id="startButton" type="button" value="Start" />
+</body>
+</html>
